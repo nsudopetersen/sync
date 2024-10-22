@@ -9,7 +9,7 @@ typedef struct tinfo {
   unsigned int wait_ns;
 } tinfo;
 
-static int buffer[BUFFERSIZE / 2][2];
+static float buffer[BUFFERSIZE / 2][2];
 static unsigned int consume_at;
 static unsigned int produce_at;
 
@@ -48,7 +48,7 @@ void get_random_float(void) {
   buffer[produce_at][0] = (int)rand() / RAND_MAX;
   buffer[produce_at][1] = (int)rand() / RAND_MAX;
 
-  printf("%d %d\n", buffer[produce_at][0], buffer[produce_at][1]);
+  printf("%f %f\n", buffer[produce_at][0], buffer[produce_at][1]);
 }
 
 void crashme(unsigned int e) {
