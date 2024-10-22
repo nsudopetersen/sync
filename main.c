@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 }
 
 void *generate_coordinates(void *myinfo) {
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 25; i++) {
     get_random_float();
     nanosleep(&(struct timespec){.tv_nsec = ((tinfo *)myinfo)->wait_ns}, NULL);
   }
