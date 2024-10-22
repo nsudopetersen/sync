@@ -4,7 +4,7 @@ CSTANDARD = -std=c11
 CFLAGS = -c -Wall -g -lpthread
 TARGET = a.out
 
-SOURCES=$(shell find src -type f -iname '*.c')
+SOURCES=$(shell find . -type f -iname '*.c')
 OBJECTS=$(foreach x, $(basename $(SOURCES)), $(x).o)
 
 default: $(TARGET)
