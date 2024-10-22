@@ -13,6 +13,7 @@ static unsigned int consume_at;
 static unsigned int produce_at;
 
 void *generate_coordinates(void *);
+void crashme(unsigned int);
 
 int main(int argc, char **argv) {
   pthread_t tid;
@@ -21,8 +22,8 @@ int main(int argc, char **argv) {
   tinfo tinfo;
   tinfo.wait_ms = 500;
 
-  if (pthread_create(&tid, &taddr, generate_coordinates, (void *)&tinfo)) {
-  }
+  if (pthread_create(&tid, &taddr, generate_coordinates, (void *)&tinfo))
+    crashme(10);
 
   return 0;
 }
