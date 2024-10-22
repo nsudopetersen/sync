@@ -25,6 +25,8 @@ int main(int argc, char **argv) {
   if (pthread_create(&tid, &taddr, generate_coordinates, (void *)&tinfo))
     crashme(10);
 
+  pthread_join(tid, NULL);
+
   return 0;
 }
 
