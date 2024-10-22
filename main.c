@@ -45,10 +45,10 @@ void get_random_float(void) {
 
   srand((unsigned int)time(NULL));
 
-  buffer[produce_at][0] = (double)rand() / RAND_MAX;
-  buffer[produce_at][1] = (double)rand() / RAND_MAX;
+  buffer[produce_at][0] = (int)rand() / RAND_MAX;
+  buffer[produce_at][1] = (int)rand() / RAND_MAX;
 
-  printf("%d %d", buffer[produce_at][0], buffer[produce_at][1]);
+  printf("%d %d\n", buffer[produce_at][0], buffer[produce_at][1]);
 }
 
 void crashme(unsigned int e) {
