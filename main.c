@@ -1,3 +1,4 @@
+#include <float.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,8 +46,10 @@ void get_random_float(void) {
 
   srand((unsigned int)time(NULL));
 
-  buffer[produce_at][0] = (int)rand() / RAND_MAX;
-  buffer[produce_at][1] = (int)rand() / RAND_MAX;
+  buffer[produce_at][0] =
+      (rand() >> (32 - FLT_MANT_DIG)) * (1.0f / (1 << FLT_MANT_DIG));
+  buffer[produce_at][1] =
+      (rand() >> (32 - FLT_MANT_DIG)) * (1.0f / (1 << FLT_MANT_DIG));
 
   printf("%f %f\n", buffer[produce_at][0], buffer[produce_at][1]);
 }
