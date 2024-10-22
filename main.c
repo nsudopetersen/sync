@@ -9,11 +9,12 @@ typedef struct tinfo {
   unsigned int wait_ns;
 } tinfo;
 
-static int buffer[BUFFERSIZE];
+static int buffer[BUFFERSIZE / 2][2];
 static unsigned int consume_at;
 static unsigned int produce_at;
 
 void *generate_coordinates(void *);
+void get_random_float(void);
 void crashme(unsigned int);
 
 int main(int argc, char **argv) {
@@ -33,10 +34,21 @@ int main(int argc, char **argv) {
 
 void *generate_coordinates(void *myinfo) {
   for (int i = 0; i < 5; i++) {
-    printf("i am alive\n");
+    get_random_float();
     nanosleep(&(struct timespec){.tv_nsec = ((tinfo *)myinfo)->wait_ns}, NULL);
   }
   pthread_exit(0);
+}
+
+void get_random_float(void) {
+  long rv;
+
+  srand((unsigned int)time(NULL));
+
+  buffer[produce_at][0] = (double)rand() / RAND_MAX;
+  buffer[produce_at][1] = (double)rand() / RAND_MAX;
+
+  printf("%d %d", buffer[produce_at][0], buffer[produce_at][1]);
 }
 
 void crashme(unsigned int e) {
