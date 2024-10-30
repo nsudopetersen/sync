@@ -27,5 +27,7 @@ public class OutputDelimited {
             }
         }
         System.out.println("");
+
+        s.close()
     }
 }
