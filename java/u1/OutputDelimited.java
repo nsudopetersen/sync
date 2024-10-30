@@ -10,17 +10,16 @@ public class OutputDelimited {
         String separator;
         Scanner s;
         String input[];
-        int i = 0;
 
         separator = args[0];
         s = new Scanner(System.in);
 
-        for(; i < OutputDelimited.LINE_COUNT; i++)
+        for(int i = 0; i < OutputDelimited.LINE_COUNT; i++)
         {
             input[i] = s.nextLine().toLowerCase() + separator;
         }
         
-        for(i = 0; i < OutputDelimited.LINE_COUNT; i++)
+        for(int i = 0; i < OutputDelimited.LINE_COUNT; i++)
         {
             System.out.print(input[i]);
         }
