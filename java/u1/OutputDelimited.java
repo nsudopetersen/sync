@@ -16,12 +16,15 @@ public class OutputDelimited {
 
         for(int i = 0; i < OutputDelimited.LINE_COUNT; i++)
         {
-            input[i] = s.nextLine().toLowerCase() + separator;
+            input[i] = s.nextLine().toLowerCase();
         }
         
         for(int i = 0; i < OutputDelimited.LINE_COUNT; i++)
         {
             System.out.print(input[i]);
+            if(i + 1 < OutputDelimited.LINE_COUNT) {
+                System.out.print(separator);
+            }
         }
         System.out.println("");
     }
