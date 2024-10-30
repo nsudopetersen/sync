@@ -20,7 +20,7 @@ public class OutputDelimited {
             input[i] = s.nextLine().toLowerCase() + separator;
         }
         
-        for(; i < OutputDelimited.LINE_COUNT; i++)
+        for(i = 0; i < OutputDelimited.LINE_COUNT; i++)
         {
             System.out.print(input[i]);
         }
