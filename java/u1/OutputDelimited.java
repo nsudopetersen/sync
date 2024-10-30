@@ -1,5 +1,7 @@
 /* */
 
+import java.util.Scanner; 
+
 public class OutputDelimited {
 
     private static final int LINE_COUNT = 3;
@@ -13,12 +15,12 @@ public class OutputDelimited {
         separator = args[0];
         s = new Scanner(System.in);
 
-        for(; i < 3; i++)
+        for(; i < OutputDelimited.LINE_COUNT; i++)
         {
             input[i] = s.nextline().toLowerCase() + separator;
         }
         
-        for(; i < 3; i++)
+        for(; i < OutputDelimited.LINE_COUNT; i++)
         {
             System.out.print(input[i]);
         }
