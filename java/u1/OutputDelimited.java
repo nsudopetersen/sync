@@ -17,7 +17,7 @@ public class OutputDelimited {
 
         for(; i < OutputDelimited.LINE_COUNT; i++)
         {
-            input[i] = s.nextline().toLowerCase() + separator;
+            input[i] = s.nextLine().toLowerCase() + separator;
         }
         
         for(; i < OutputDelimited.LINE_COUNT; i++)
