@@ -9,7 +9,7 @@ public class OutputDelimited {
     public static void main(String[] args) {
         String separator;
         Scanner s;
-        String[] input = new String[3];
+        String[] input = new String[OutputDelimited.LINE_COUNT];
 
         separator = args[0];
         s = new Scanner(System.in);
